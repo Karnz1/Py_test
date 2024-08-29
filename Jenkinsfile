@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent docker-agent-python
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                python3 app.py
             }
         }
         stage('Test') {
